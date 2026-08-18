@@ -157,9 +157,11 @@ input:focus, select:focus {
 }
 
 .record-number {
-  white-space:nowrap;
-  text-transform:uppercase;
-  font-weight:700;
+  margin-left: auto;
+  white-space: nowrap;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .record-title {
@@ -235,8 +237,8 @@ dd { margin:0; min-width:0; }
 }
 
 .cycle-tag {
-  background:var(--accent);
-  color:white;
+  background:var(--soft);
+  color:var(--ink);
   border:1px solid transparent;
 }
 
@@ -252,12 +254,12 @@ dd { margin:0; min-width:0; }
   border:1px solid transparent;
 }
 
-.cycle-tag:hover,
 .language-tag:hover {
   background:#740015;
   text-decoration:underline;
 }
 
+.cycle-tag:hover,
 .discipline-tag:hover {
   background:#dde2e5;
   border-color:#b7bdc1;
