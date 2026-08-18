@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catalogue Mascofo</title>
+  <meta name="description" content="Catalogue Mascofo du CRCCF">
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">Centre de recherche sur les francophonies canadiennes</p>
+      <h1>Catalogue Mascofo</h1>
+      <p class="intro">Recherchez les manuels scolaires et autres ressources du catalogue Mascofo.</p>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="search-panel" aria-labelledby="searchHeading">
+      <h2 id="searchHeading">Rechercher dans le catalogue</h2>
+
+      <div class="filter-grid">
+        <label>
+          Titre
+          <input id="titleFilter" type="search" placeholder="Titre">
+        </label>
+
+        <label>
+          Auteur
+          <input id="authorFilter" type="search" placeholder="Mention de responsabilité">
+        </label>
+
+        <label>
+          Cycle
+          <select id="cycleFilter">
+            <option value="">Tous les cycles</option>
+          </select>
+        </label>
+
+        <label>
+          Discipline
+          <select id="disciplineFilter">
+            <option value="">Toutes les disciplines</option>
+          </select>
+        </label>
+
+        <label>
+          Date de début
+          <input id="startYearFilter" type="number" inputmode="numeric" min="1500" max="2100" placeholder="Ex. 1950">
+        </label>
+
+        <label>
+          Date de fin
+          <input id="endYearFilter" type="number" inputmode="numeric" min="1500" max="2100" placeholder="Ex. 2000">
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="searchButton" type="button" class="primary">Rechercher</button>
+        <button id="resetButton" type="button" class="secondary">Réinitialiser</button>
+      </div>
+    </section>
+
+    <section class="results-section" aria-labelledby="resultsHeading">
+      <div class="results-heading" id="resultsHeading">
+        <div>
+          <h2>Résultats</h2>
+          <div id="activeLanguageFilter" class="active-filter" hidden></div>
+        </div>
+        <p id="resultCount" aria-live="polite">Chargement…</p>
+      </div>
+
+      <div id="results"></div>
+      <nav id="pagination" class="pagination" aria-label="Pagination des résultats"></nav>
+    </section>
+  </main>
+
+  <template id="recordTemplate">
+    <article class="record-card">
+      <div class="record-topline">
+        <div class="cycle-list" aria-label="Cycle"></div>
+        <span class="record-number"></span>
+      </div>
+      <h3 class="record-title"></h3>
+      <dl class="record-details"></dl>
+      <div class="bubble-groups">
+        <div class="language-list" aria-label="Langue"></div>
+        <div class="discipline-list" aria-label="Discipline"></div>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js?v=1"></script>
+</body>
+</html>
